@@ -19,6 +19,8 @@
     <h3 class="card-title">Tambah Barang</h3>
     <form method="post">
         ID Barang: <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_barang" required><br><br>
+        Nomor Barcode <input type="text" name="nomor_barcode" id="exampleInputEmail1" aria-describedby="emailHelp" name="nomor_barcode" required><br><br>
+        jumlah_jual <input type="text" name="jumlah_jual" id="exampleInputEmail1" aria-describedby="emailHelp" name="jumlah_jual" required><br><br>
         Nama Barang: <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_barang" required><br><br>
         Stok: <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="stok" required><br><br>
         Harga: <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="harga" required><br><br>
@@ -34,11 +36,13 @@
     <?php
     if (isset($_POST['simpan'])) {
         $id_barang = $_POST['id_barang'];
+        $nomor_barcode = $_POST['nomor_barcode'];
+        $jumlah_jual = $_POST['jumlah_jual'];
         $nama_barang = $_POST['nama_barang'];
         $stok = $_POST['stok'];
         $harga = $_POST['harga'];
 
-        $sql = "INSERT INTO toko_dika (id_barang, nama_barang, stok, harga) VALUES ('$id_barang','$nama_barang','$stok','$harga')";
+        $sql = "INSERT INTO toko_dika (id_barang, nomor_barcoode, jumlah_jual, nama_barang, stok, harga) VALUES ('$id_barang','$nomor_barcode','$jumlah_jual','$nama_barang','$stok','$harga')";
         if (mysqli_query($koneksi, $sql)) {
             header("Location: index.php");
         } else {

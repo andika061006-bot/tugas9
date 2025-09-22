@@ -18,6 +18,8 @@
     <table style="width='20px';" border="1" cellpadding="8" cellspacing="0">
         <tr>
             <th>ID Barang</th>
+            <th>nomor_barcode</th>
+            <th>jumlah_jual</th>
             <th>Nama Barang</th>
             <th>Stok</th>
             <th>Harga</th>
@@ -28,6 +30,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>
                     <td>".$row['id_barang']."</td>
+                    <td>".$row["nomor_barcode"]."</td>
+                    <td>".$row["jumlah_jual"]."</td>
                     <td>".$row['nama_barang']."</td>
                     <td>".$row['stok']."</td>
                     <td>".$row['harga']."</td>
